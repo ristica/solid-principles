@@ -5,7 +5,7 @@ implementation of the SOLID principles :
   - Single Responsibility Principle
   - Open Closed Principle
   - (Barbara) Liskov Substitution Principle
-  - Interface Segregation Pronciple
+  - Interface Segregation Principle
   - Dependency Inversion Principle
   
   
