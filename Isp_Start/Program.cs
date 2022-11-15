@@ -22,7 +22,7 @@ namespace Isp_Start
             }
 
             /// <summary>
-            /// Violation of the Interface Segregation Pronciple
+            /// Violation of the Interface Segregation Principle
             /// this function / implementation is not needed bei 
             /// this concrete class
             /// </summary>
@@ -56,7 +56,7 @@ namespace Isp_Start
             }
 
             /// <summary>
-            /// Violation of the Interface Segregation Pronciple
+            /// Violation of the Interface Segregation Principle
             /// this function / implementation is not needed bei 
             /// this concrete class
             /// </summary>
