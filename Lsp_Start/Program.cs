@@ -6,7 +6,7 @@ namespace Lsp_Start
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("### Liskow Substitution Principle => START ###");
+            Console.WriteLine("### Liskov Substitution Principle => START ###");
             Console.WriteLine("");
 
             // main class
