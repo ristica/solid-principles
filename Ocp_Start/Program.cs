@@ -2,7 +2,7 @@
 
 namespace Ocp_Start
 {
-    static class Program
+    internal static class Program
     {
         private static void Main()
         {
@@ -41,28 +41,28 @@ namespace Ocp_Start
 
             public MathOperations(int x, int y)
             {
-                this.X = x;
-                this.Y = y;
+                X = x;
+                Y = y;
             }
 
             public int Add()
             {
-                return this.X + this.Y;
+                return X + Y;
             }
 
             public int Multiply()
             {
-                return this.X * this.Y;
+                return X * Y;
             }
 
             public int Divide()
             {
-                return this.X / this.Y;
+                return X / Y;
             }
 
             public decimal Subtract()
             {
-                return this.X - this.Y;
+                return X - Y;
             }
         }
 

@@ -14,7 +14,7 @@
 
             public override int CalculateArea()
             {
-                return this.Width * this.Height;
+                return Width * Height;
             }
         }
 
@@ -24,7 +24,7 @@
 
             public override int CalculateArea()
             {
-                return this.Sidelength * this.Sidelength;
+                return Sidelength * Sidelength;
             }
         }
     }

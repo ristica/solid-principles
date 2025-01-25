@@ -2,44 +2,46 @@
 
 namespace Isp_End
 {
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
         }
 
         #region ICalculate implementations
 
-
-        class CalculateAddAndSubstract : ICalculateAddSubstract
+        private class CalculateAddAndSubtract : ICalculateAddSubtract
         {
             public int Add(int x, int y)
             {
                 return x + y;
             }
 
-            public int Substract(int x, int y)
+            public int Subtract(int x, int y)
             {
                 return x - y;
             }
         }
 
-        class CalculateMultiply : ICalculateMultiply
+        private class CalculateMultiply : ICalculateMultiply
         {
             public int Multiply(int x, int y)
             {
                 return x * y;
             }
         }
+
         #endregion
 
         #region Interface
-        interface ICalculateAddSubstract
+
+        private interface ICalculateAddSubtract
         {
             int Add(int x, int y);
-            int Substract(int x, int y);
+            int Subtract(int x, int y);
         }
-        interface ICalculateMultiply
+
+        private interface ICalculateMultiply
         {
             int Multiply(int x, int y);
         }

@@ -26,22 +26,22 @@
 
         public override int Height
         {
-            get { return this._height; }
+            get => _height;
             set
             {
-                this._height = value;
-                this._width = value;
-            }
-        }
-        public override int Width
-        {
-            get { return this._width; }
-            set
-            {
-                this._height = value;
-                this._width = value;
+                _height = value;
+                _width = value;
             }
         }
 
+        public override int Width
+        {
+            get => _width;
+            set
+            {
+                _height = value;
+                _width = value;
+            }
+        }
     }
 }

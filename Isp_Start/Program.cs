@@ -2,21 +2,22 @@
 
 namespace Isp_Start
 {
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
         }
 
         #region ICalculate implementations
-        class CalculateAddAndSubstract : ICalculate
+
+        internal class CalculateAddAndSubtract : ICalculate
         {
             public int Add(int x, int y)
             {
                 return x + y;
             }
 
-            public int Substract(int x, int y)
+            public int Subtract(int x, int y)
             {
                 return x - y;
             }
@@ -35,10 +36,10 @@ namespace Isp_Start
             }
         }
 
-        class CalculateMultiply : ICalculate
+        private class CalculateMultiply : ICalculate
         {
             /// <summary>
-            /// Violation of the Interface Segregation Pronciple
+            /// Violation of the Interface Segregation Principle
             /// this function / implementation is not needed bei 
             /// this concrete class
             /// </summary>
@@ -63,20 +64,23 @@ namespace Isp_Start
             /// <param name="x"></param>
             /// <param name="y"></param>
             /// <returns></returns>
-            public int Substract(int x, int y)
+            public int Subtract(int x, int y)
             {
                 throw new NotImplementedException();
             }
         }
+
         #endregion
 
         #region Interface
-        interface ICalculate
+
+        private interface ICalculate
         {
             int Add(int x, int y);
-            int Substract(int x, int y);
+            int Subtract(int x, int y);
             int Multiply(int x, int y);
         }
+
         #endregion
     }
 }

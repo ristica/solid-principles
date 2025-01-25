@@ -2,21 +2,21 @@
 
 namespace Srp_Start
 {
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
             Console.WriteLine("### Single Responsibility Principle => START ###");
             Console.WriteLine("");
 
-            var mo = new MathOperations {X = 6, Y = 3};
+            var mo = new MathOperations { X = 6, Y = 3 };
 
             Console.WriteLine("{0}", mo.MathToString(mo));
             Console.WriteLine();
             Console.WriteLine("{0} + {1} = {2}", mo.X, mo.Y, mo.Add());
             Console.WriteLine("{0} * {1} = {2}", mo.X, mo.Y, mo.Multiply());
             Console.WriteLine("{0} / {1} = {2}", mo.X, mo.Y, mo.Divide());
-            Console.WriteLine("{0} - {1} = {2}", mo.X, mo.Y, mo.Substract());    
+            Console.WriteLine("{0} - {1} = {2}", mo.X, mo.Y, mo.Subtract());
 
             Console.WriteLine("");
             Console.WriteLine("### END ###");
@@ -33,22 +33,22 @@ namespace Srp_Start
 
             public int Add()
             {
-                return this.X + this.Y;
+                return X + Y;
             }
 
             public int Multiply()
             {
-                return this.X * this.Y;
+                return X * Y;
             }
 
             public int Divide()
             {
-                return this.X / this.Y;
+                return X / Y;
             }
 
-            public int Substract()
+            public int Subtract()
             {
-                return this.X - this.Y;
+                return X - Y;
             }
 
             public void Print(MathOperations mathOperations)
@@ -58,12 +58,10 @@ namespace Srp_Start
 
             public string MathToString(MathOperations mathOperations)
             {
-                return $"X: {this.X}, Y: {this.Y}";
+                return $"X: {X}, Y: {Y}";
             }
         }
 
         #endregion
-
-
     }
 }

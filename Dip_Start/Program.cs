@@ -2,9 +2,9 @@
 
 namespace Dip_Start
 {
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
             Console.WriteLine("");
             var textPrinter = new InvoiceTextPrinter();
@@ -20,7 +20,7 @@ namespace Dip_Start
 
     #region IInvoicePrinter
 
-    interface IInvoicePrinter
+    internal interface IInvoicePrinter
     {
         void Print();
     }
@@ -29,7 +29,7 @@ namespace Dip_Start
 
     #region IInvoicePrinter concrete
 
-    class InvoiceHtmlPrinter : IInvoicePrinter
+    internal class InvoiceHtmlPrinter : IInvoicePrinter
     {
         public void Print()
         {
@@ -37,7 +37,7 @@ namespace Dip_Start
         }
     }
 
-    class InvoiceTextPrinter : IInvoicePrinter
+    internal class InvoiceTextPrinter : IInvoicePrinter
     {
         public void Print()
         {

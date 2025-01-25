@@ -2,7 +2,7 @@
 
 namespace Ocp_End
 {
-    static class Program
+    internal static class Program
     {
         private static void Main()
         {
@@ -10,7 +10,7 @@ namespace Ocp_End
             Console.WriteLine("");
 
             // main class
-            var mo = new MathOperations( 6, 3);
+            var mo = new MathOperations(6, 3);
 
             // main class' operations 
             Console.WriteLine("{0} + {1} = {2}", mo.X, mo.Y, mo.Calculate((a, b) => a + b));
@@ -38,14 +38,14 @@ namespace Ocp_End
 
             public MathOperations(int x, int y)
             {
-                this.X = x; 
-                this.Y = y;
+                X = x;
+                Y = y;
             }
 
             // class is open for extensions but closed for modifications!!!
             public decimal Calculate(Func<int, int, decimal> mathFunction)
             {
-                return mathFunction(this.X, this.Y);
+                return mathFunction(X, Y);
             }
         }
 

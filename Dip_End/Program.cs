@@ -2,9 +2,9 @@
 
 namespace Dip_End
 {
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
             Console.WriteLine("");
 
@@ -23,12 +23,12 @@ namespace Dip_End
 
     #region IInvoicePrinter
 
-    interface IInvoicePrinter
+    internal interface IInvoicePrinter
     {
         void Print();
     }
 
-    class InvoiceHtmlPrinter : IInvoicePrinter
+    internal class InvoiceHtmlPrinter : IInvoicePrinter
     {
         public void Print()
         {
@@ -36,7 +36,7 @@ namespace Dip_End
         }
     }
 
-    class InvoiceTextPrinter : IInvoicePrinter
+    internal class InvoiceTextPrinter : IInvoicePrinter
     {
         public void Print()
         {
@@ -48,18 +48,18 @@ namespace Dip_End
 
     #region IInvoiceManager
 
-    class InvoicePrinterManager
+    internal class InvoicePrinterManager
     {
         private readonly IInvoicePrinter _printer;
 
         public InvoicePrinterManager(IInvoicePrinter printer)
         {
-            this._printer = printer;
+            _printer = printer;
         }
 
         public void DoPrint()
         {
-            this._printer.Print();
+            _printer.Print();
         }
     }
 

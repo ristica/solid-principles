@@ -2,21 +2,21 @@
 
 namespace Srp_End
 {
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
             Console.WriteLine("### Single Responsibility Principle => START ###");
             Console.WriteLine("");
 
-            var mo = new MathOperations { X = 6, Y = 3 };
+            var mo = new MathOperations(6, 3);
 
             Console.WriteLine("{0} + {1} = {2}", mo.X, mo.Y, mo.Add());
             Console.WriteLine("{0} * {1} = {2}", mo.X, mo.Y, mo.Multiply());
             Console.WriteLine("{0} / {1} = {2}", mo.X, mo.Y, mo.Divide());
-            Console.WriteLine("{0} - {1} = {2}", mo.X, mo.Y, mo.Substract());
+            Console.WriteLine("{0} - {1} = {2}", mo.X, mo.Y, mo.Subtract());
             Console.WriteLine("");
-                      
+
             // main class' outsourced operations
             var printingHelper = new MathOperationsPrinting();
             printingHelper.Print(mo);
@@ -38,34 +38,36 @@ namespace Srp_End
         /// doing some math calculations / operations
         /// and nothing else
         /// </summary>
-        class MathOperations
+        private sealed class MathOperations
         {
-            #region Properties
-            public int X { get; set; }
-            public int Y { get; set; }
-            #endregion
+            public int X { get; }
+            public int Y { get; }
 
-            #region Methods
+            public MathOperations(int x, int y)
+            {
+                X = x;
+                Y = y;
+            }
+
             public int Add()
             {
-                return this.X + this.Y;
+                return X + Y;
             }
 
             public int Multiply()
             {
-                return this.X * this.Y;
+                return X * Y;
             }
 
             public int Divide()
             {
-                return this.X / this.Y;
+                return X / Y;
             }
 
-            public int Substract()
+            public int Subtract()
             {
-                return this.X - this.Y;
+                return X - Y;
             }
-            #endregion  
         }
 
         #endregion
@@ -73,11 +75,11 @@ namespace Srp_End
         #region Helpers classes
 
         /// <summary>
-        ///  this helper class is doing only printing of the 
+        /// this helper class is doing only printing of the 
         /// particular MathOperations class
         /// and nothing else
         /// </summary>
-        class MathOperationsPrinting
+        private class MathOperationsPrinting
         {
             public void Print(MathOperations mathOperations)
             {
@@ -89,7 +91,7 @@ namespace Srp_End
         /// this class makes an output of the particular
         /// MathOperations class and nothing else
         /// </summary>
-        class MathOutput
+        private class MathOutput
         {
             public string MathToString(MathOperations mo)
             {
