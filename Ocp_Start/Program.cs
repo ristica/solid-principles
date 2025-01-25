@@ -2,21 +2,21 @@
 
 namespace Ocp_Start
 {
-    class Program
+    static class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
             Console.WriteLine("### Open Closed Principle => START ###");
             Console.WriteLine("");
 
             // main class
-            var mo = new MathOperations { X = 6, Y = 3 };
+            var mo = new MathOperations(6, 3);
 
             // main class' operations 
             Console.WriteLine("{0} + {1} = {2}", mo.X, mo.Y, mo.Add());
             Console.WriteLine("{0} * {1} = {2}", mo.X, mo.Y, mo.Multiply());
             Console.WriteLine("{0} / {1} = {2}", mo.X, mo.Y, mo.Divide());
-            Console.WriteLine("{0} - {1} = {2}", mo.X, mo.Y, mo.Substract());
+            Console.WriteLine("{0} - {1} = {2}", mo.X, mo.Y, mo.Subtract());
 
             Console.WriteLine("");
             Console.WriteLine("### END ###");
@@ -30,14 +30,20 @@ namespace Ocp_Start
         /// math class has only one responsibility:
         /// doing some math calculations / operations
         /// and nothing else
-        /// BUT: class is not open for extensions bescause if
+        /// BUT: class is not open for extensions because if
         /// there is a need for new calculation's art the class has 
         /// to be modified itself! OCP is broken!!!!!
         /// </summary>
-        class MathOperations
+        private sealed class MathOperations
         {
-            public int X { get; set; }
-            public int Y { get; set; }
+            public int X { get; private set; }
+            public int Y { get; private set; }
+
+            public MathOperations(int x, int y)
+            {
+                this.X = x;
+                this.Y = y;
+            }
 
             public int Add()
             {
@@ -54,7 +60,7 @@ namespace Ocp_Start
                 return this.X / this.Y;
             }
 
-            public decimal Substract()
+            public decimal Subtract()
             {
                 return this.X - this.Y;
             }
