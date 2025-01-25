@@ -24,7 +24,7 @@ namespace Lsp_End.Tests
         {
             var s = new Lsp.Square
             {
-                Sidelength = 3
+                SideLength = 3
             };
 
             Assert.AreEqual(9, s.CalculateArea());
@@ -41,7 +41,7 @@ namespace Lsp_End.Tests
 
             Lsp.Shape shapeSquare = new Lsp.Square
             {
-                Sidelength = 3
+                SideLength = 3
             };
 
             Assert.AreEqual(20, shapeRectangle.CalculateArea());

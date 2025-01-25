@@ -1,6 +1,6 @@
 ﻿namespace Lsp_End.Core
 {
-    public class Lsp
+    public static class Lsp
     {
         public abstract class Shape
         {
@@ -20,11 +20,11 @@
 
         public class Square : Shape
         {
-            public int Sidelength { private get; set; }
+            public int SideLength { private get; set; }
 
             public override int CalculateArea()
             {
-                return Sidelength * Sidelength;
+                return SideLength * SideLength;
             }
         }
     }

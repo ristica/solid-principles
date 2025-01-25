@@ -1,6 +1,6 @@
 ﻿namespace Lsp_Start.Core
 {
-    public class AreaCalculator
+    public static class AreaCalculator
     {
         public static int CalculateArea(Rectangle r)
         {
