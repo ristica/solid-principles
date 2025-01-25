@@ -31,8 +31,8 @@ namespace Ocp_Start
         /// doing some math calculations / operations
         /// and nothing else
         /// BUT: class is not open for extensions because if
-        /// there is a need for new calculation's art the class has 
-        /// to be modified itself! OCP is broken!!!!!
+        /// there is a need for a new operation the class itself has to be modified!
+        /// OCP is broken!!!!!
         /// </summary>
         private sealed class MathOperations
         {
