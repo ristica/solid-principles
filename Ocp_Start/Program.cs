@@ -36,8 +36,8 @@ namespace Ocp_Start
         /// </summary>
         private sealed class MathOperations
         {
-            public int X { get; private set; }
-            public int Y { get; private set; }
+            public int X { get; }
+            public int Y { get; }
 
             public MathOperations(int x, int y)
             {
